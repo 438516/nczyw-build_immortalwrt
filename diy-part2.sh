@@ -28,61 +28,61 @@ function git_sparse_clone() {
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # 添加主题
-git clone -b js --single-branch https://github.com/gngpp/luci-theme-design package/luci-theme-design
-git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
+# git clone -b js --single-branch https://github.com/gngpp/luci-theme-design package/luci-theme-design
+# git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 # 添加 万能推送
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pushbot
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pushbot
 # 添加关机插件
 #git clone https://github.com/VPN-V2Ray/luci-app-poweroff.git package/luci-app-poweroff
 # 添加passwall2
-git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+# git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 #加入turboacc
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
-chmod -R 777 add_turboacc.sh
-./add_turboacc.sh
+# curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
+# chmod -R 777 add_turboacc.sh
+# ./add_turboacc.sh
 
 
 echo "
 # 主题
-CONFIG_PACKAGE_luci-theme-design=y
+CONFIG_PACKAGE_luci-theme-design=n
 
-CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-theme-infinityfreedom=y
 
-CONFIG_PACKAGE_luci-theme-material=y
+CONFIG_PACKAGE_luci-theme-material=n
 
-CONFIG_PACKAGE_luci-theme-openwrt-2020=y
+CONFIG_PACKAGE_luci-theme-openwrt-2020=n
 
-CONFIG_PACKAGE_luci-theme-alpha=y
+CONFIG_PACKAGE_luci-theme-alpha=n
 
 
 
 
 
 # 万能推送
-CONFIG_PACKAGE_luci-app-pushbot=y
+CONFIG_PACKAGE_luci-app-pushbot=n
 
 # 关机插件
 #CONFIG_PACKAGE_luci-app-poweroff=y
 
 # passwall2
-CONFIG_PACKAGE_luci-app-passwall2=y
+CONFIG_PACKAGE_luci-app-passwall2=n
 
 # TurboAcc
-CONFIG_PACKAGE_luci-app-turboacc=y
+CONFIG_PACKAGE_luci-app-turboacc=n
 
 " >> .config
 
 # 修改默认IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.123.220/192.168.123.220/g' package/base-files/files/bin/config_generate
 
 # 修改默认子网掩码
-sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_generate
+sed -i 's/255.255.255.0/255.255.255.0/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
-#sed -i 's/luci-theme-openwrt-2020/luci-theme-alpha/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-infinityfreedom/luci-theme-infinityfreedom/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
-sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
+sed -i 's/N4505/N4505/g' package/base-files/files/bin/config_generate
 
 # 修改Ping 默认网址 immortalwrt.org
 #cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_network/diagnostics.htm
