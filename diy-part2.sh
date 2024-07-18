@@ -44,9 +44,9 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 echo "
 # 主题
-# CONFIG_PACKAGE_luci-theme-design=n
+CONFIG_PACKAGE_luci-theme-argon=y
 
-# CONFIG_PACKAGE_luci-theme-infinityfreedom=y
+CONFIG_PACKAGE_luci-theme-infinityfreedom=y
 
 # CONFIG_PACKAGE_luci-theme-material=n
 
