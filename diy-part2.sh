@@ -44,31 +44,31 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 echo "
 # 主题
-CONFIG_PACKAGE_luci-theme-design=n
+# CONFIG_PACKAGE_luci-theme-design=n
 
-CONFIG_PACKAGE_luci-theme-infinityfreedom=y
+# CONFIG_PACKAGE_luci-theme-infinityfreedom=y
 
-CONFIG_PACKAGE_luci-theme-material=n
+# CONFIG_PACKAGE_luci-theme-material=n
 
-CONFIG_PACKAGE_luci-theme-openwrt-2020=n
+# CONFIG_PACKAGE_luci-theme-openwrt-2020=n
 
-CONFIG_PACKAGE_luci-theme-alpha=n
+# CONFIG_PACKAGE_luci-theme-alpha=n
 
 
 
 
 
 # 万能推送
-CONFIG_PACKAGE_luci-app-pushbot=n
+# CONFIG_PACKAGE_luci-app-pushbot=n
 
 # 关机插件
-#CONFIG_PACKAGE_luci-app-poweroff=y
+# CONFIG_PACKAGE_luci-app-poweroff=y
 
 # passwall2
-CONFIG_PACKAGE_luci-app-passwall2=n
+# CONFIG_PACKAGE_luci-app-passwall2=n
 
 # TurboAcc
-CONFIG_PACKAGE_luci-app-turboacc=n
+# CONFIG_PACKAGE_luci-app-turboacc=n
 
 " >> .config
 
