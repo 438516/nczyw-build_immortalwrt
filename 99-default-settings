@@ -21,7 +21,7 @@ rm -f /usr/lib/lua/luci/view/admin_status/index/linkease.htm
 
 ln -sf /sbin/ip /usr/bin/ip
 
-sed -i 's/root::0:0:99999:7:::/root:root:$1$Tp0WlehU$7fTieRPHm4ie41xa22r9T/:19673:0:99999:7:::/g' /etc/shadow
+sed -i 's/root::0:0:99999:7:::/root:$1$Tp0WlehU$7fTieRPHm4ie41xa22r9T/:19673:0:99999:7:::/g' /etc/shadow
 
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
 echo "DISTRIB_REVISION='v$(date +'%Y.%m')'" >> /etc/openwrt_release
